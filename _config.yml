@@ -10,6 +10,10 @@ collections:
   projects:
     output: true
     permalink: /project/:slug
+  photographs: 
+    output: true
+    permalink: /photos/:slug
+
 
 defaults:
   -
@@ -35,6 +39,12 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  -
+    scope:
+      path: ""
+      type: "photographs"
+    values: 
+      layout: "project"
 
 markdown: kramdown
 
@@ -48,6 +58,13 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jemoji
+  - jekyll-analytics
+
+jekyll_analytics: 
+  GoogleAnalytics: 
+    id: UA-143755009-1
+    anonymizeIp: false
 
 paginate: 6
 paginate_path: "/blog/page:num/"
