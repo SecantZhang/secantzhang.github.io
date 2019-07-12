@@ -1,35 +1,33 @@
 ---
-title: About Index
-subtitle: Index is a minimal, fixed sidebar grid portfolio Jekyll theme. Perfect for designers, artists, photographers and developers to use for their portfolio website.
-description: Index is a minimal, fixed sidebar grid portfolio Jekyll theme.
-featured_image: /images/demo/demo-landscape.jpg
+title: About
+subtitle: 
+description:
+featured_image: /images/portrait/website_logo_chinese_2.png
 ---
 
-![](/images/demo/demo-landscape.jpg)
+![](images/portrait/website_logo_chinese_2.png)
 
-## Features
+<a href="documents/zheng_resume_v3.5.pdf" class="button">Resume</a>
 
-Index is packed with powerful features to showcase your work:
+---
+ 
+I am an undergraduate student studying computing statistics and data sciences at the Pennsylvania State University. 
+And my current interests are statistics, machine learning and big data analysis. 
 
-* Beautiful, minimal design
-* Fixed sidebar menu
-* Two-column masonry grid layout
-* Responsive – works perfectly on all devices
-* Portfolio post type
-* Blog with pagination
-* Sleek Ajax navigation and page transitions
-* Unique 'gallery' feature for image grids and carousels
-* Built-in contact form with Formspree integration
-* Full markdown support and code highlighting
-* Social media icons
-* Fast page rendering
-* Built with SEO best practices in mind
-* Customize everything – colors, spacing, fonts, sizes etc. – via a simple settings file
-* Works with GitHub Pages
-* Updated and supported by the developers
+## Education: 
 
-## Get Index
+<span style="color: #3A3A3A; font-family: Futura; font-size: 1em;">
+*Bachelor of Science*: **Statistics** - Computing Option, 2016-2020
+</span>
 
-Index is created and supported by [Jekyll Themes](https://jekyllthemes.io), and is available for $29.
+<span style="color: #3A3A3A; font-family: Futura; font-size: 0.8em;">
+The Pennsylvania State University, University Park, PA
+</span>
 
-<a href="https://jekyllthemes.io/theme/index-portfolio-jekyll-theme" class="button button--large">Get This Theme</a>
+<span style="color: #3A3A3A; font-family: Futura; font-size: 1em;">
+*Bachelor of Science*: **Data Sciences** - Statistical Modeling Option, 2016-2020
+</span>
+
+<span style="color: #3A3A3A; font-family: Futura; font-size: 0.8em;">
+The Pennsylvania State University, University Park, PA
+</span>

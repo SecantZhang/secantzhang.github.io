@@ -19,7 +19,7 @@ featured_image: '/images/photographs/old_collection/IMG_1477.jpg'
 :city_sunset:
 
 <div class="gallery" data-columns="3">
-    <img src="/images/photographs/old_collection/IMG_5214.jpg">
-    <img src="/images/photographs/old_collection/IMG_5240.jpg">
-    <img src="/images/photographs/old_collection/IMG_5215.jpg">
+    <img src="/images/photographs/old_collection/IMG_5214.JPG">
+    <img src="/images/photographs/old_collection/IMG_5240.JPG">
+    <img src="/images/photographs/old_collection/IMG_5215.JPG">
 </div>
