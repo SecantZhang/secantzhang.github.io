@@ -13,6 +13,9 @@ collections:
   photographs: 
     output: true
     permalink: /photos/:slug
+  arts:
+    output: true
+    permalink: /arts/:slug
 
 
 defaults:
@@ -44,6 +47,12 @@ defaults:
       path: ""
       type: "photographs"
     values: 
+      layout: "project"
+  -
+    scope:
+      path: ""
+      type: "arts"
+    values:
       layout: "project"
 
 markdown: kramdown

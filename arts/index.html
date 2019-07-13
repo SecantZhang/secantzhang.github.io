@@ -1,0 +1,37 @@
+---
+layout: default
+title: A minimal, fixed sidebar grid portfolio Jekyll theme.
+description: A minimal, fixed sidebar grid portfolio Jekyll theme.
+featured_image: /images/social.jpg
+---
+
+<section class="portfolio">
+
+	<div class="content-wrap portfolio-wrap">
+
+		{% for arts in site.arts reversed %}
+
+		<div class="portfolio-item">
+
+			<a class="portfolio-item__link" href="{{ arts.url }}">
+
+				<div class="portfolio-item__image">
+					<img src="{{ arts.featured_image  }}" alt="{{ arts.title }}">
+				</div>
+
+				<div class="portfolio-item__content">
+					<div class="portfolio-item__info">
+						<h2 class="portfolio-item__title">{{ arts.title }}</h2>
+						<p class="portfolio-item__subtitle">{{ arts.subtitle }}</p>
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</section>
