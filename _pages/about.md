@@ -10,7 +10,7 @@ featured_image: /images/portrait/website_logo_chinese_2.png
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
 
-Most recent update: Oct 29, 2019
+Most recent update: Jan 09, 2020
 
 ---
  
