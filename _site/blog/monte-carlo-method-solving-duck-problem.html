@@ -27,12 +27,12 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Using Monte-Carlo Simulation to solve an interesting duck problem. – Zheng Zhang">
 	<meta name="twitter:description" content="">
-	<meta name="twitter:image:src" content="http://localhost:4000/images/demo/demo-square.jpg">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/blogs/01-09-20-Monte_Carlo/mc_banner.png">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Using Monte-Carlo Simulation to solve an interesting duck problem. – Zheng Zhang" />
 	<meta property="og:description" content="" />
-	<meta property="og:image" content="http://localhost:4000/images/demo/demo-square.jpg" />
+	<meta property="og:image" content="http://localhost:4000/images/blogs/01-09-20-Monte_Carlo/mc_banner.png" />
 
 	
 	<!-- Font Embed Code -->
@@ -211,6 +211,16 @@
 
 		</div>
 
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			  tex2jax: {
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				inlineMath: [['$','$']]
+			  }
+			});
+		  </script>
+		  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
 	</div>
 
 </header>
@@ -240,9 +250,11 @@
 
 	<div class="wrap">
 
-		<h1 id="introduction">Introduction</h1>
+		<p><img src="/images/blogs/01-09-20-Monte_Carlo/1521260.png" alt="drawing" width="150" /></p>
 
-<p>Back to the end of 2019 when I was traveling back to China, I saw an very cute and interesting problem on my Moments (a social network on WeChat). The problem is in the picture below:</p>
+<h1 id="introduction">Introduction</h1>
+
+<p>Back to the end of 2019 when I was traveling back to China, I saw an very cute and interesting problem on my Moments (a social network on WeChat). The problem is described in the picture below:</p>
 
 <p><img src="/images/blogs/01-09-20-Monte_Carlo/WechatIMG30.jpeg" alt="drawing" width="400" /></p>
 
@@ -273,19 +285,33 @@ Following the intuition, we need some functions to determine multiple conditions
 
 <p>After solving the above requirements/conditions, we’re good to simulate.</p>
 
+<hr />
+
 <h1 id="monte-carlo-simulation-explained">Monte Carlo Simulation Explained</h1>
 
-<h2 id="function-inside_circle-for-condition-01">Function <code class="highlighter-rouge">inside_circle</code> for Condition 01.</h2>
+<h2 id="function-inside_circle-for-condition-01">Function “<code class="highlighter-rouge">inside_circle</code>” for Condition 01.</h2>
 <p>The function <code class="highlighter-rouge">inside_circle</code> basically takes the input of the coordinates of both randomly assigned point, the center of the circle (pool) as well as its radius and returns the decision. 
-The algorithm is fairly simple, simply compute the distance of both centers and compare it to the radius.</p>
+The algorithm is fairly simple, as it only computes the distance of both centers using the distance formula and compares it to the radius. If the distance is greater than radius, we conclude the simulated point is outside of the pool (returns <code class="highlighter-rouge">false</code>) and vice-versa (returns <code class="highlighter-rouge">true</code>).</p>
 
-<p>to be continued…</p>
+<p>Distance Formula:</p>
+
+<script type="math/tex; mode=display">d = \sqrt{(x_1 - x_2)^2 + (y_1-y_2)^2}</script>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inside_circle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">curr_coord</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span> 
     <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">curr_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">curr_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">radius</span>
 </code></pre></div></div>
 
+<h2 id="function-semicircle-for-condition-02">Function “<code class="highlighter-rouge">semicircle</code>” for Condition 02.</h2>
+<p>The function <code class="highlighter-rouge">semicircle</code> serves the purpose of determining if four points are in the same semi-circle or not. As this is the <em>core</em> function for the monte-carlo simulation, it’s a bit more complicated comparing to other functions.</p>
+
+<p>The general idea for this algorithm is that, we first connects one point to the circle so that we draw a line that go through the center, thus created a semi-circle inside the pool. And next, we calculate the function of that line as well as the sign of the rest of points respect to the line. If the signs are consistent, means all positive or all negative, we conclude that the four ducks are in the same semi-circle. And if the signs are not consistent, we draw a line between next point and the center, until all points are used.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">semicircle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">curr_row</span><span class="p">):</span> 
+    <span class="s">"""
+    @param center_coord:    The coordinate of pool's center, represented as a tuple. 
+    @param curr_row:        The coordinate of four simulated ducks (points), represented as a list of tuples. 
+    @returns:               True if four points are in the same semi-circle, false if not. 
+    """</span>
     <span class="c1"># Calculate the line function for each coord and center. 
 </span>    <span class="c1"># Ax + By + C = 0: A=y2-y1, B=x1-x2, C=x2*y1-x1*y2. 2: center, 1: current point
 </span>    <span class="n">result_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -298,6 +324,11 @@ The algorithm is fairly simple, simply compute the distance of both centers and 
             <span class="k">return</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="bp">False</span>
 </code></pre></div></div>
+
+<p>Since the inputs and loops for this function are fixed (4 for the for loop and 4 for the semicircle list comprehension), the time complexity is $O(n)$</p>
+
+<p>Updated at feb 15, 2020, 
+to be continued…</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">canvas_size</span><span class="p">,</span> <span class="n">sim_size</span><span class="p">):</span> 
     <span class="n">canvas_radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">canvas_size</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
