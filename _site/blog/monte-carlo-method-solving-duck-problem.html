@@ -240,18 +240,95 @@
 
 	<div class="wrap">
 
-		<!-- # Outline Topics: 
+		<h1 id="introduction">Introduction</h1>
 
-1. Gradient of functions in 1D and 2D
-2. Numerical derivatives, taylor series, finite differences
-3. Image gradients
-4. Function of gradients, magnitude and orientation
+<p>Back to the end of 2019 when I was traveling back to China, I saw an very cute and interesting problem on my Moments (a social network on WeChat). The problem is in the picture below:</p>
 
-## 01 - Gradient of functions in 1D and 2D. 
-In computer vision, we tend to describe images as surfaces where the surface height is proportional to the pixel grey value (dark = low, light = high). 
-For 1D functions, the gradient at $X_0$ is slope of tangent line to curve at point $X_0$.
-For 2D functions, the gradient is vector of partial derivatives with respect to x and y axes. And the vector itself indicates direction and steepness of ascent.  -->
+<p><img src="/images/blogs/01-09-20-Monte_Carlo/WechatIMG30.jpeg" alt="drawing" width="400" /></p>
 
+<h2 id="problem-definition">Problem Definition</h2>
+
+<p>The basic description of this problem is this:</p>
+<blockquote>
+  <p>Suppose I have four ducks randomly located inside a round pool, what is the probability that the four ducks happens to be in the same semi-circle?</p>
+</blockquote>
+
+<p>The first time I see this question, my instant intuition is to simulate it using the monte-carlo simulation. And the results for the simulation does converge to the actual probability. I’ll show you how I achieve this using the code below.</p>
+
+<p>First, we’ll do some import statement. The libraries we’re using are pretty simple and common, they are <code class="highlighter-rouge">random</code>, <code class="highlighter-rouge">math</code> and <code class="highlighter-rouge">numpy</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span><span class="p">,</span> <span class="n">uniform</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<p>The intuition I have is to directly randomly generate 4 points (ducks) inside the round circle (pool) for a large amount of times, and to see the probability or ratio between the groups that are in the same semi-circle and the total number of groups I sampled. 
+Following the intuition, we need some functions to determine multiple conditions:</p>
+
+<ol>
+  <li><strong>How to determine if a point (duck) is inside the circle (pool) or not.</strong></li>
+  <li><strong>How to determine if four points are inside the same semi-circle.</strong></li>
+  <li><strong>Done simulation in a more efficient and pythonic way.</strong></li>
+</ol>
+
+<p>After solving the above requirements/conditions, we’re good to simulate.</p>
+
+<h1 id="monte-carlo-simulation-explained">Monte Carlo Simulation Explained</h1>
+
+<h2 id="function-inside_circle-for-condition-01">Function <code class="highlighter-rouge">inside_circle</code> for Condition 01.</h2>
+<p>The function <code class="highlighter-rouge">inside_circle</code> basically takes the input of the coordinates of both randomly assigned point, the center of the circle (pool) as well as its radius and returns the decision. 
+The algorithm is fairly simple, simply compute the distance of both centers and compare it to the radius.</p>
+
+<p>to be continued…</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inside_circle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">curr_coord</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">curr_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">curr_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">radius</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">semicircle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">curr_row</span><span class="p">):</span> 
+    <span class="c1"># Calculate the line function for each coord and center. 
+</span>    <span class="c1"># Ax + By + C = 0: A=y2-y1, B=x1-x2, C=x2*y1-x1*y2. 2: center, 1: current point
+</span>    <span class="n">result_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> 
+        <span class="n">A</span> <span class="o">=</span> <span class="n">center_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">curr_row</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">curr_row</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="n">center_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">curr_row</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">curr_row</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">center_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">semicircle_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="o">*</span><span class="n">curr_row</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">curr_row</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">C</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">semicircle_result</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">canvas_size</span><span class="p">,</span> <span class="n">sim_size</span><span class="p">):</span> 
+    <span class="n">canvas_radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">canvas_size</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">center_coord</span> <span class="o">=</span> <span class="p">(</span><span class="n">canvas_radius</span><span class="p">,</span> <span class="n">canvas_radius</span><span class="p">)</span>
+
+    <span class="n">curr_sim_size</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">curr_success_size</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">curr_sim_matx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">sim_size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">total_sim_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">curr_sim_size</span> <span class="o">&lt;=</span> <span class="n">sim_size</span><span class="p">:</span> 
+        <span class="n">total_sim_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">temp_row</span> <span class="o">=</span> <span class="p">[(</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">canvas_size</span><span class="p">),</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">canvas_size</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+        <span class="n">temp_row_truth</span> <span class="o">=</span> <span class="p">[</span><span class="n">inside_circle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">temp_coord</span><span class="p">,</span> <span class="n">canvas_radius</span><span class="p">)</span> <span class="k">for</span> <span class="n">temp_coord</span> <span class="ow">in</span> <span class="n">temp_row</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">temp_row_truth</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># Make sure the sampled result is within the circle. 
+</span>            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">result_semicircle</span> <span class="o">=</span> <span class="n">semicircle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">temp_row</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result_semicircle</span><span class="p">:</span> 
+                <span class="n">curr_success_size</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">curr_sim_matx</span><span class="p">[</span><span class="n">curr_sim_size</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_semicircle</span><span class="p">)</span>
+            <span class="n">curr_sim_size</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">curr_success_size</span> <span class="o">/</span> <span class="n">sim_size</span><span class="p">)</span>
+            
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">))</span>
+</code></pre></div></div>
 
 
 	</div>

@@ -6,15 +6,92 @@ description:
 featured_image: '/images/demo/demo-square.jpg'
 ---
 
-<!-- # Outline Topics: 
+# Introduction
 
-1. Gradient of functions in 1D and 2D
-2. Numerical derivatives, taylor series, finite differences
-3. Image gradients
-4. Function of gradients, magnitude and orientation
+Back to the end of 2019 when I was traveling back to China, I saw an very cute and interesting problem on my Moments (a social network on WeChat). The problem is in the picture below: 
 
-## 01 - Gradient of functions in 1D and 2D. 
-In computer vision, we tend to describe images as surfaces where the surface height is proportional to the pixel grey value (dark = low, light = high). 
-For 1D functions, the gradient at $X_0$ is slope of tangent line to curve at point $X_0$.
-For 2D functions, the gradient is vector of partial derivatives with respect to x and y axes. And the vector itself indicates direction and steepness of ascent.  -->
+<img src="/images/blogs/01-09-20-Monte_Carlo/WechatIMG30.jpeg" alt="drawing" width="400"/>
 
+## Problem Definition
+
+The basic description of this problem is this: 
+> Suppose I have four ducks randomly located inside a round pool, what is the probability that the four ducks happens to be in the same semi-circle? 
+
+The first time I see this question, my instant intuition is to simulate it using the monte-carlo simulation. And the results for the simulation does converge to the actual probability. I'll show you how I achieve this using the code below. 
+
+First, we'll do some import statement. The libraries we're using are pretty simple and common, they are ```random```, ```math``` and ```numpy```. 
+
+```python
+from random import random, uniform
+from math import sqrt 
+import numpy as np
+```
+
+The intuition I have is to directly randomly generate 4 points (ducks) inside the round circle (pool) for a large amount of times, and to see the probability or ratio between the groups that are in the same semi-circle and the total number of groups I sampled. 
+Following the intuition, we need some functions to determine multiple conditions: 
+
+1. **How to determine if a point (duck) is inside the circle (pool) or not.**
+2. **How to determine if four points are inside the same semi-circle.**
+3. **Done simulation in a more efficient and pythonic way.**
+
+After solving the above requirements/conditions, we're good to simulate. 
+
+# Monte Carlo Simulation Explained
+
+## Function ```inside_circle``` for Condition 01. 
+The function ```inside_circle``` basically takes the input of the coordinates of both randomly assigned point, the center of the circle (pool) as well as its radius and returns the decision. 
+The algorithm is fairly simple, simply compute the distance of both centers and compare it to the radius. 
+
+to be continued...
+
+```python
+def inside_circle(center_coord, curr_coord, radius): 
+    return sqrt((curr_coord[0]-center_coord[0])**2 + (curr_coord[1]-center_coord[1])**2) < radius
+```
+
+```python
+def semicircle(center_coord, curr_row): 
+    # Calculate the line function for each coord and center. 
+    # Ax + By + C = 0: A=y2-y1, B=x1-x2, C=x2*y1-x1*y2. 2: center, 1: current point
+    result_list = []
+    for i in range(4): 
+        A = center_coord[1]-curr_row[i][1]
+        B = curr_row[i][0]-center_coord[0]
+        C = center_coord[0]*curr_row[i][1]-curr_row[i][0]*center_coord[1]
+        semicircle_result = [A*curr_row[j][0]+B*curr_row[j][1]+C >= 0 for j in range(4) if j != i]
+        if len(set(semicircle_result)) == 1: 
+            return True
+    return False
+```
+
+```python
+def main(canvas_size, sim_size): 
+    canvas_radius = float(canvas_size/2)
+    center_coord = (canvas_radius, canvas_radius)
+
+    curr_sim_size = 0
+    curr_success_size = 0
+    curr_sim_matx = np.empty((sim_size+1, 5))
+    total_sim_count = 0
+
+    while curr_sim_size <= sim_size: 
+        total_sim_count += 1
+
+        temp_row = [(uniform(0, canvas_size), uniform(0, canvas_size)) for i in range(4)]
+        temp_row_truth = [inside_circle(center_coord, temp_coord, canvas_radius) for temp_coord in temp_row]
+
+        if temp_row_truth != [1,1,1,1]: # Make sure the sampled result is within the circle. 
+            continue
+        else: 
+            result_semicircle = semicircle(center_coord, temp_row)
+            if result_semicircle: 
+                curr_success_size += 1
+            curr_sim_matx[curr_sim_size] = temp_row.append(result_semicircle)
+            curr_sim_size += 1
+    
+    return float(curr_success_size / sim_size)
+            
+
+if __name__ == "__main__": 
+    print(main(50, 1000000))
+```
