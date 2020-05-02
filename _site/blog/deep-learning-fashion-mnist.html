@@ -1,0 +1,556 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Zheng Zhang
+
+	Index Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/portrait/self_portrait.JPG">
+	<title>Achieving 95.42% Accuracy on Fashion-Mnist Dataset Using Transfer Learning and Data Augmentation with Keras – Zheng Zhang</title>
+	<meta name="description" content="">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Achieving 95.42% Accuracy on Fashion-Mnist Dataset Using Transfer Learning and Data Augmentation with Keras – Zheng Zhang">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/blogs/04-20-20-Deep-Learning-Fashion-Mnist/dl_banner.png">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Achieving 95.42% Accuracy on Fashion-Mnist Dataset Using Transfer Learning and Data Augmentation with Keras – Zheng Zhang" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="http://localhost:4000/images/blogs/04-20-20-Deep-Learning-Fashion-Mnist/dl_banner.png" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/blog/deep-learning-fashion-mnist">
+
+
+	<header class="header">
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__title">
+			Zheng Zhang
+		</a>
+		
+
+		<h1 class="header__tagline">Penn State 2020er, Computing Statistics & Data Sciences</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Projects</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/blog/" class="menu__list__item__link">Blog</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/photographs" class="menu__list__item__link">Photographs</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/arts" class="menu__list__item__link">Arts</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link">Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				
+				<li class="menu__list__item">
+					<a href="/project/encode-imputation" class="menu__list__item__link">Encode Imputation</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="/project/rmodel2tex" class="menu__list__item__link">rmodel2tex</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="/project/a-weather" class="menu__list__item__link">A-weatheR</a>
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="header__lower">
+
+			<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/SecantZhang/" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.linkedin.com/in/zheng-zhang-5bbb46139/" target="_blank" class="socials__item__link" title="Linkedin">
+			<i class="fab fa-linkedin" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+</ul>
+
+			<div class="footer__copyright">
+				<span>© 2020 Zheng Zhang</span>
+				<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+			</div>
+
+		</div>
+
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			  tex2jax: {
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				inlineMath: [['$','$']]
+			  }
+			});
+		  </script>
+		  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Achieving 95.42% Accuracy on Fashion-Mnist Dataset Using Transfer Learning and Data Augmentation with Keras – Zheng Zhang">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Achieving 95.42% Accuracy on Fashion-Mnist Dataset Using Transfer Learning and Data Augmentation with Keras</h1>
+		<p>20 April 2020</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<p>I have most of the working code below, and I’m still updating it.</p>
+
+<h2 id="background">Background</h2>
+
+<h2 id="google-colab-implementation">Google Colab Implementation</h2>
+
+<h3 id="environment-set-up">Environment Set-up</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">RandomizedSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># %tensorflow_version only exists in Colab.
+</span>    <span class="o">%</span><span class="n">tensorflow_version</span> <span class="mf">2.</span><span class="n">x</span>
+<span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">MaxPool2D</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">BatchNormalization</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Lambda</span><span class="p">,</span> <span class="n">GlobalAveragePooling2D</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adadelta</span><span class="p">,</span> <span class="n">Adam</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.metrics</span> <span class="kn">import</span> <span class="n">categorical_crossentropy</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.mobilenet</span> <span class="kn">import</span> <span class="n">MobileNet</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.mobilenet_v2</span> <span class="kn">import</span> <span class="n">MobileNetV2</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.backend</span> <span class="kn">import</span> <span class="n">repeat_elements</span><span class="p">,</span> <span class="n">expand_dims</span><span class="p">,</span> <span class="n">resize_images</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
+<span class="kn">import</span> <span class="nn">keras.backend</span> <span class="k">as</span> <span class="n">K</span>
+
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">reciprocal</span>
+
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">keras</span><span class="o">-</span><span class="n">tuner</span>
+<span class="kn">from</span> <span class="nn">kerastuner.tuners</span> <span class="kn">import</span> <span class="n">Hyperband</span>
+</code></pre></div></div>
+
+<p>Sanity Check</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">if</span> <span class="s">'COLAB_TPU_ADDR'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connected to TPU'</span><span class="p">)</span> 
+<span class="k">elif</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">''</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connected to GPU '</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Neither connected to a TPU nor a GPU'</span><span class="p">)</span>
+
+<span class="n">gpu_info</span> <span class="o">=</span> <span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+<span class="n">gpu_info</span> <span class="o">=</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gpu_info</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpu_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'failed'</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Select the Runtime → "Change runtime type" menu to enable a GPU accelerator, '</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'and then re-execute this cell.'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">gpu_info</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Mount the google drive to the colab space:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s">'/content/gdrive'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="data-preparation">Data Preparation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">"&lt;your working directory&gt;"</span><span class="p">)</span>
+<span class="n">train_original</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"data/fashion-mnist_train.csv"</span><span class="p">)</span>
+<span class="n">blind_test_original</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"data/fashion-mnist_test.csv"</span><span class="p">)</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">train_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">train_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">7980</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Convert flatted data to the image format. 
+</span><span class="n">X_train_tfd</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="n">X_test_tfd</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="n">blind_test_tfd</span> <span class="o">=</span> <span class="n">blind_test_original</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">blind_test_original</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="n">X_tfd</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+
+<span class="c1"># Sanity check of the converted data. 
+</span><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train_tfd</span><span class="p">[</span><span class="mi">1</span><span class="p">,:,:])</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">784</span><span class="p">)</span> <span class="o">==</span> <span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span> <span class="o">==</span> <span class="mi">784</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Standardize the data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_train_tfd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="n">X_train_tfd</span> <span class="o">/</span> <span class="n">X_train_tfd</span><span class="o">.</span><span class="nb">max</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test_tfd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="n">X_test_tfd</span> <span class="o">/</span> <span class="n">X_test_tfd</span><span class="o">.</span><span class="nb">max</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">blind_test_tfd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="n">blind_test_tfd</span> <span class="o">/</span> <span class="n">blind_test_tfd</span><span class="o">.</span><span class="nb">max</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_tfd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="n">X_tfd</span> <span class="o">/</span> <span class="n">X_tfd</span><span class="o">.</span><span class="nb">max</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">X_train_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">X_test_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">blind_test_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">X_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="data-augmentation">Data Augmentation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">random_reverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">x</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">data_generator</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span> 
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+        <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span> 
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_reverse</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="n">batch_size</span><span class="p">:</span> 
+                <span class="k">yield</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+                <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">:</span> 
+            <span class="k">yield</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+            <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="kn">from</span> <span class="nn">random_eraser</span> <span class="kn">import</span> <span class="n">get_random_eraser</span>
+<span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
+    <span class="n">featurewise_center</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># set input mean to 0 over the dataset
+</span>    <span class="n">samplewise_center</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># set each sample mean to 0
+</span>    <span class="n">featurewise_std_normalization</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># divide inputs by std of the dataset
+</span>    <span class="n">samplewise_std_normalization</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># divide each input by its std
+</span>    <span class="n">zca_whitening</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># apply ZCA whitening
+</span>    <span class="n">rotation_range</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># randomly rotate images in the range (degrees, 0 to 180)
+</span>    <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># randomly shift images horizontally (fraction of total width)
+</span>    <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># randomly shift images vertically (fraction of total height)
+</span>    <span class="n">horizontal_flip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>  <span class="c1"># randomly flip images
+</span>    <span class="n">vertical_flip</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># randomly flip images
+</span>    <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">get_random_eraser</span><span class="p">(</span><span class="n">v_l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">v_h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pixel_level</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="define-training-model">Define Training Model</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">build_model</span><span class="p">():</span> 
+    <span class="n">input_image</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">resized_image</span> <span class="o">=</span> <span class="n">Lambda</span><span class="p">(</span><span class="k">lambda</span> <span class="n">image</span><span class="p">:</span> <span class="n">resize_images</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">height_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">data_format</span><span class="o">=</span><span class="s">'channels_last'</span><span class="p">))(</span><span class="n">input_image</span><span class="p">)</span>
+
+    <span class="n">base_model</span> <span class="o">=</span> <span class="n">MobileNet</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s">'imagenet'</span><span class="p">,</span> <span class="n">include_top</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="n">resized_image</span><span class="p">)</span>
+    <span class="c1"># output = Dropout(0.5)(base_model.output)
+</span>    <span class="c1"># predict = Dense(10, activation='softmax')(output)
+</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">base_model</span><span class="o">.</span><span class="n">output</span>
+    <span class="c1"># x = BatchNormalization()(x)
+</span>    <span class="c1"># x = GlobalAveragePooling2D()(x)
+</span>    <span class="c1"># x = Dense(128, activation='relu')(x)
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">GlobalAveragePooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c1"># x = BatchNormalization()(x)
+</span>    <span class="n">predictions</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'softmax'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">predictions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s">'categorical_crossentropy'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="model-training">Model Training</h3>
+
+<h4 id="train-the-model-with-only-training-set">Train the model with only training set.</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">history_bhp</span> <span class="o">=</span> <span class="n">model_bhp</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">datagen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">X_train_tfd</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">),</span> 
+                                      <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">X_train_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+                                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test_tfd</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4 id="train-the-model-with-both-training-and-validation-set-for-final-preparation">Train the model with both training and validation set for final preparation.</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">history_bhp_all</span> <span class="o">=</span> <span class="n">model_bhp</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">datagen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">X_tfd</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">),</span> 
+                                          <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">X_tfd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="final-prediction">Final Prediction</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">blind_test_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">model_bhp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">blind_test_tfd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">blind_test_submission</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s">"Id"</span><span class="p">,</span> <span class="s">"predicted"</span><span class="p">]]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">blind_test_result</span><span class="p">)),</span> <span class="n">blind_test_result</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">blind_test_submission</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">blind_test_submission</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"&lt;output_file_name.csv&gt;"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference:</h2>
+
+<ol>
+  <li>Fashion-Mnist with MobileNet: <a href="https://kexue.fm/archives/4556">Blog</a></li>
+  <li>Random Erasing Data Augmentation: <a href="https://arxiv.org/abs/1708.04896">Paper</a>, <a href="https://github.com/zhunzhong07/Random-Erasing">GitHub</a></li>
+</ol>
+
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/SecantZhang/" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.linkedin.com/in/zheng-zhang-5bbb46139/" target="_blank" class="socials__item__link" title="Linkedin">
+			<i class="fab fa-linkedin" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+</ul>
+
+	<div class="footer__copyright">
+		<span>© 2020 Zheng Zhang</span>
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/index-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>

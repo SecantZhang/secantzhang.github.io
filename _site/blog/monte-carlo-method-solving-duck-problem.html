@@ -254,7 +254,7 @@
 
 <h1 id="introduction">Introduction</h1>
 
-<p>Back to the end of 2019 when I was traveling back to China, I saw an very cute and interesting problem on my Moments (a social network on WeChat). The problem is described in the picture below:</p>
+<p>Back to the end of 2019, when I was traveling back to China, I saw an adorable and interesting problem on my Moments (a social network on WeChat). The problem is described in the picture below:</p>
 
 <p><img src="/images/blogs/01-09-20-Monte_Carlo/WechatIMG30.jpeg" alt="drawing" width="400" /></p>
 
@@ -262,19 +262,20 @@
 
 <p>The basic description of this problem is this:</p>
 <blockquote>
-  <p>Suppose I have four ducks randomly located inside a round pool, what is the probability that the four ducks happens to be in the same semi-circle?</p>
+  <p>Suppose I have four ducks randomly located inside a round pool, what is the probability that the four ducks happen to be in the same semi-circle?</p>
 </blockquote>
 
-<p>The first time I see this question, my instant intuition is to simulate it using the monte-carlo simulation. And the results for the simulation does converge to the actual probability. I’ll show you how I achieve this using the code below.</p>
+<p>The first time I see this question, my instant intuition is to simulate it using the Monte-Carlo simulation. And the results for the simulation does converge to the actual probability. I’ll show you how I achieve this using the code below.</p>
 
-<p>First, we’ll do some import statement. The libraries we’re using are pretty simple and common, they are <code class="highlighter-rouge">random</code>, <code class="highlighter-rouge">math</code> and <code class="highlighter-rouge">numpy</code>.</p>
+<p>First, we’ll make some import statements. The libraries we’re using are pretty simple and common; they are <code class="highlighter-rouge">random</code>, <code class="highlighter-rouge">math</code> and <code class="highlighter-rouge">numpy</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span><span class="p">,</span> <span class="n">uniform</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </code></pre></div></div>
 
-<p>The intuition I have is to directly randomly generate 4 points (ducks) inside the round circle (pool) for a large amount of times, and to see the probability or ratio between the groups that are in the same semi-circle and the total number of groups I sampled. 
+<p>The intuition I have is to directly randomly generate 4 points (ducks) inside the circle (pool) for a large number of iterations and to see the probability or ratio between the groups that are in the same semi-circle and the total number of groups I sampled. 
 Following the intuition, we need some functions to determine multiple conditions:</p>
 
 <ol>
@@ -290,8 +291,8 @@ Following the intuition, we need some functions to determine multiple conditions
 <h1 id="monte-carlo-simulation-explained">Monte Carlo Simulation Explained</h1>
 
 <h2 id="function-inside_circle-for-condition-01">Function “<code class="highlighter-rouge">inside_circle</code>” for Condition 01.</h2>
-<p>The function <code class="highlighter-rouge">inside_circle</code> basically takes the input of the coordinates of both randomly assigned point, the center of the circle (pool) as well as its radius and returns the decision. 
-The algorithm is fairly simple, as it only computes the distance of both centers using the distance formula and compares it to the radius. If the distance is greater than radius, we conclude the simulated point is outside of the pool (returns <code class="highlighter-rouge">false</code>) and vice-versa (returns <code class="highlighter-rouge">true</code>).</p>
+<p>The function <code class="highlighter-rouge">inside_circle</code> basically takes the input of the coordinates of both randomly assigned points, the center of the circle (pool) as well as its radius, and returns the decision. 
+The algorithm is relatively simple, as it only computes the distance of both centers using the distance formula and compares it to the radius. If the distance is greater than the radius, we conclude the simulated point is outside of the pool (returns <code class="highlighter-rouge">false</code>) and vice-versa (returns <code class="highlighter-rouge">true</code>).</p>
 
 <p>Distance Formula:</p>
 
@@ -302,9 +303,9 @@ The algorithm is fairly simple, as it only computes the distance of both centers
 </code></pre></div></div>
 
 <h2 id="function-semicircle-for-condition-02">Function “<code class="highlighter-rouge">semicircle</code>” for Condition 02.</h2>
-<p>The function <code class="highlighter-rouge">semicircle</code> serves the purpose of determining if four points are in the same semi-circle or not. As this is the <em>core</em> function for the monte-carlo simulation, it’s a bit more complicated comparing to other functions.</p>
+<p>The function <code class="highlighter-rouge">semicircle</code> serves the purpose of determining if four points are in the same semi-circle or not. As this is the <em>core</em> function for the Monte-Carlo simulation, it’s a bit more complicated compared to other functions.</p>
 
-<p>The general idea for this algorithm is that, we first connects one point to the circle so that we draw a line that go through the center, thus created a semi-circle inside the pool. And next, we calculate the function of that line as well as the sign of the rest of points respect to the line. If the signs are consistent, means all positive or all negative, we conclude that the four ducks are in the same semi-circle. And if the signs are not consistent, we draw a line between next point and the center, until all points are used.</p>
+<p>The general idea for this algorithm is that we first connect one point to the circle so that we draw a line that goes through the center, thus created a semi-circle inside the pool. And next, we calculate the function of that line as well as the sign of the rest of points respect to the line. If the signs are consistent, means all positive or all negative, we conclude that the four ducks are in the same semi-circle. And if the signs are not consistent, we draw a line between the next point and the center, until all points are used.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">semicircle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">curr_row</span><span class="p">):</span> 
     <span class="s">"""
@@ -325,41 +326,71 @@ The algorithm is fairly simple, as it only computes the distance of both centers
     <span class="k">return</span> <span class="bp">False</span>
 </code></pre></div></div>
 
-<p>Since the inputs and loops for this function are fixed (4 for the for loop and 4 for the semicircle list comprehension), the time complexity is $O(n)$</p>
+<p>Since the inputs and loops for this function are fixed (4 for the for loop and 4 for the semi-circle list comprehension), the time complexity is $O(n)$</p>
 
-<p>Updated at feb 15, 2020, 
-to be continued…</p>
+<p>After we prepared all the related functions above, we’re finally able to start the simulation. 
+The ideas are simple; we randomly throw four ducks (points) into the assigned canvas (pool) for a large number of iterations.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">canvas_size</span><span class="p">,</span> <span class="n">sim_size</span><span class="p">):</span> 
-    <span class="n">canvas_radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">canvas_size</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<p>In each iteration, we first determine if the randomly assigned points are in the circle or not using the <code class="highlighter-rouge">inside_circle()</code> function. If the points are not located inside the circle, we discard the current iteration start a new one.</p>
+
+<p>Once the four points are in the same circle, we then use the <code class="highlighter-rouge">semicicle()</code> function to determine if these points are in the same semi-circle or not. If true, both of the success count and the number of trails would increase by one. Otherwise, only the number of trails would increase by one to keep the number of simulations on record.</p>
+
+<p>After running all of the valid iterations, we’ll return the result of simulated probability by calculating the ratio between success_count and number of trails.</p>
+
+<script type="math/tex; mode=display">\text{Simulated Probability} = \frac{\text{Number of Success}}{\text{Total Number of Trials}}</script>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">canvas_size</span><span class="p">,</span> <span class="n">sim_size</span><span class="p">):</span>
+    <span class="n">canvas_radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">canvas_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">center_coord</span> <span class="o">=</span> <span class="p">(</span><span class="n">canvas_radius</span><span class="p">,</span> <span class="n">canvas_radius</span><span class="p">)</span>
 
     <span class="n">curr_sim_size</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">curr_success_size</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">curr_sim_matx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">sim_size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">curr_sim_matx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">sim_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
     <span class="n">total_sim_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">step_average</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">sim_size</span><span class="p">)</span>
 
-    <span class="k">while</span> <span class="n">curr_sim_size</span> <span class="o">&lt;=</span> <span class="n">sim_size</span><span class="p">:</span> 
+    <span class="k">while</span> <span class="n">curr_sim_size</span> <span class="o">&lt;=</span> <span class="n">sim_size</span><span class="p">:</span>
         <span class="n">total_sim_count</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="n">temp_row</span> <span class="o">=</span> <span class="p">[(</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">canvas_size</span><span class="p">),</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">canvas_size</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
         <span class="n">temp_row_truth</span> <span class="o">=</span> <span class="p">[</span><span class="n">inside_circle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">temp_coord</span><span class="p">,</span> <span class="n">canvas_radius</span><span class="p">)</span> <span class="k">for</span> <span class="n">temp_coord</span> <span class="ow">in</span> <span class="n">temp_row</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">temp_row_truth</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># Make sure the sampled result is within the circle. 
+        <span class="k">if</span> <span class="n">temp_row_truth</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>  <span class="c1"># Make sure the sampled result is within the circle.
 </span>            <span class="k">continue</span>
-        <span class="k">else</span><span class="p">:</span> 
+        <span class="k">else</span><span class="p">:</span>
             <span class="n">result_semicircle</span> <span class="o">=</span> <span class="n">semicircle</span><span class="p">(</span><span class="n">center_coord</span><span class="p">,</span> <span class="n">temp_row</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">result_semicircle</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">result_semicircle</span><span class="p">:</span>
                 <span class="n">curr_success_size</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">curr_sim_matx</span><span class="p">[</span><span class="n">curr_sim_size</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_semicircle</span><span class="p">)</span>
             <span class="n">curr_sim_size</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">curr_success_size</span> <span class="o">/</span> <span class="n">sim_size</span><span class="p">)</span>
-            
+            <span class="n">step_average</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr_success_size</span> <span class="o">/</span> <span class="n">curr_sim_size</span><span class="p">)</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span> 
-    <span class="k">print</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">))</span>
+    <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">curr_success_size</span> <span class="o">/</span> <span class="n">sim_size</span><span class="p">),</span> <span class="n">step_average</span>
+            
+<span class="k">def</span> <span class="nf">step_avg_plot</span><span class="p">(</span><span class="n">step_avg_list</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">step_avg_list</span><span class="p">)),</span> <span class="n">step_avg_list</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s">'# Iteration'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s">'Probability'</span><span class="p">,</span>
+           <span class="n">title</span><span class="o">=</span><span class="s">'Monte Carlo Simulation for Approximating the Ducks in Pool Problem'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 </code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">estimated_prob</span><span class="p">,</span> <span class="n">step_average</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">estimated_prob</span><span class="p">)</span>
+    <span class="n">step_avg_plot</span><span class="p">(</span><span class="n">step_average</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>After running 8000 iterations, we get the result of the approximated probability of <code class="highlighter-rouge">0.5005</code>.</p>
+
+<p>We can also keep track of the step-wise probability in each iteration and plot the result using the above <code class="highlighter-rouge">step_avg_plot()</code> function.</p>
+
+<p><img src="/images/blogs/01-09-20-Monte_Carlo/mc_output_plot.png" alt="Step-Wise Approximated Probability in Each Iteration" /></p>
+
+<p>The figure above illustrates the convergence probability in the Monte-Carlo simulation, where the x-axis is the number of iterations and the y-axis being the probability at the relative steps. We observe that the convergence is unstable due to the small size of simulations for the first 1000 iterations. However, the simulation quickly converges to probability 0.5 after 5000 iterations, which is the real-solution proofed by theoretical calculations.</p>
 
 
 	</div>
