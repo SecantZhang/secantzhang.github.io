@@ -250,7 +250,9 @@
 
 	<div class="wrap">
 
-		<p><img src="/images/blogs/01-09-20-Monte_Carlo/1521260.png" alt="drawing" width="150" /></p>
+		<p><a href="https://github.com/SecantZhang/Random-Thoughts/tree/master/Monte_Carlo_Simulation-Solving-Duck_Problem" class="button">Link to GitHub Repository</a></p>
+
+<p><img src="/images/blogs/01-09-20-Monte_Carlo/1521260.png" alt="drawing" width="150" /></p>
 
 <h1 id="introduction">Introduction</h1>
 
@@ -267,7 +269,7 @@
 
 <p>The first time I see this question, my instant intuition is to simulate it using the Monte-Carlo simulation. And the results for the simulation does converge to the actual probability. I’ll show you how I achieve this using the code below.</p>
 
-<p>First, we’ll make some import statements. The libraries we’re using are pretty simple and common; they are <code class="highlighter-rouge">random</code>, <code class="highlighter-rouge">math</code> and <code class="highlighter-rouge">numpy</code>.</p>
+<p>First, we’ll make some import statements. The libraries we’re using are pretty simple and common; they are <code class="highlighter-rouge">random</code>, <code class="highlighter-rouge">math</code> and <code class="highlighter-rouge">numpy</code>. The package <code class="highlighter-rouge">tqdm</code> is mainly used for providing a progress bar when performing the monte-carlo simulations.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span><span class="p">,</span> <span class="n">uniform</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>

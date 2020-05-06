@@ -6,6 +6,8 @@ description:
 featured_image: '/images/blogs/01-09-20-Monte_Carlo/mc_banner.png'
 ---
 
+<a href="https://github.com/SecantZhang/Random-Thoughts/tree/master/Monte_Carlo_Simulation-Solving-Duck_Problem" class="button">Link to GitHub Repository</a>
+
 <img src="/images/blogs/01-09-20-Monte_Carlo/1521260.png" alt="drawing" width="150"/>
 
 # Introduction
@@ -21,7 +23,7 @@ The basic description of this problem is this:
 
 The first time I see this question, my instant intuition is to simulate it using the Monte-Carlo simulation. And the results for the simulation does converge to the actual probability. I'll show you how I achieve this using the code below. 
 
-First, we'll make some import statements. The libraries we're using are pretty simple and common; they are ```random```, ```math``` and ```numpy```. 
+First, we'll make some import statements. The libraries we're using are pretty simple and common; they are ```random```, ```math``` and ```numpy```. The package ```tqdm``` is mainly used for providing a progress bar when performing the monte-carlo simulations. 
 
 ```python
 from random import random, uniform
