@@ -70,10 +70,7 @@ plugins:
   - jemoji
   - jekyll-analytics
 
-jekyll_analytics: 
-  GoogleAnalytics: 
-    id: UA-143755009-1
-    anonymizeIp: false
+google_analytics: UA-167416614-1
 
 paginate: 6
 paginate_path: "/blog/page:num/"
