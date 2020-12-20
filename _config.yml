@@ -69,9 +69,29 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-analytics
+  - jekyll-scholar
 
 google_analytics: UA-167416614-1
 
 paginate: 6
 paginate_path: "/blog/page:num/"
-  
+
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./documents/publications/
+  bibliography: bibliography.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"

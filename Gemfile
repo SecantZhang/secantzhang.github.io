@@ -7,4 +7,5 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jemoji'
   gem 'jekyll-analytics'
+  gem 'jekyll-scholar'
 end
