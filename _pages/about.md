@@ -5,28 +5,39 @@ description:
 featured_image: /images/portrait/website_logo_chinese_2.png
 ---
 
-![](images/portrait/website_logo_chinese_2.png)
+![](images/about/banner_zheng.png)
+
+You can find me via emails: 
+* zxz147@psu.edu
+* zhengzhangedu@gmail.com (preferred)
 
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
 
-Most recent update: Jan 09, 2020
+Most recent update: Dec 22, 2020
 
 ---
  
-I am an undergraduate student studying computing statistics and data sciences at the Pennsylvania State University. 
-And my current interests are statistics, machine learning and big data analysis. 
+I am a senior undergraduate student (graduated on Dec 19, 2020) studying computational statistics and data sciences at the Pennsylvania State University. I'm currently advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2020.  
+
+My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications. 
 
 ### Education: 
 
-*Bachelor of Science*: **Statistics** - Computing Option, 2016-2020  
-The Pennsylvania State University, University Park, PA
+#### Bachelor of Science (2016 - 2020)
+**Statistics** - Computing Option \\
+**Data Sciences** - Statistical Modeling  \\
+*The Pennsylvania State University*, University Park, PA
 
-*Bachelor of Science*: **Data Sciences** - Statistical Modeling Option, 2016-2020  
-The Pennsylvania State University, University Park, PA
+### Publications: 
 
+**2020 Preprint:** *"TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. 
 
-### Research Experience: 
+**2020 Preprint:** *"Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+
+**2020 Preprint:** *"Trojaning Language Models for Fun and Profit"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+
+<!-- ### Research Experience: 
 
 **Undergraduate Researcher** at *the Mahony Lab*. &nbsp; May 2019 - Present  
 Advisor: Dr. Shaun Mahony
@@ -45,4 +56,4 @@ Advisor: Dr. Shaun Mahony
 
 * Runner Up of AccuWeather's Challenge during HackPSU 2018. 
 * Finalist and Best Visualization Award of DataFest 2019 held by American Statistical Association. 
-* Dean's List - 2017, 2018, 2019
+* Dean's List - 2017, 2018, 2019 -->
