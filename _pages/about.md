@@ -5,7 +5,8 @@ description:
 featured_image: /images/portrait/website_logo_chinese_2.png
 ---
 
-![](images/about/banner_zheng.png)
+<img src="/images/about/banner_zheng.png" alt="drawing" width="800"/>
+<!-- ![](images/about/banner_zheng.png) -->
 
 You can find me via emails: 
 * zxz147@psu.edu
@@ -14,20 +15,22 @@ You can find me via emails:
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
 
-Most recent update: Dec 22, 2020
+Most recent update: Feb 11, 2021
 
 ---
  
-I am a senior undergraduate student (graduated on Dec 19, 2020) studying computational statistics and data sciences at the Pennsylvania State University. I'm currently advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2020.  
+I am a senior undergraduate student (graduated on Dec 19, 2020) studying computational statistics and data sciences at the Pennsylvania State University. I'm currently advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications. 
 
 ### Education: 
 
 #### Bachelor of Science (2016 - 2020)
-**Statistics** - Computing Option \\
-**Data Sciences** - Statistical Modeling  \\
-*The Pennsylvania State University*, University Park, PA
+***The Pennsylvania State University***, University Park, PA
+
+* **Statistics** - Computing Option
+* **Data Sciences** - Statistical Modeling Option
+* Minors in **Computer Science** and **Mathematics**
 
 ### Publications: 
 
@@ -36,6 +39,11 @@ My research focus on deep learning security & privacy, more specifically the bac
 **2020 Preprint:** *"Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
 
 **2020 Preprint:** *"Trojaning Language Models for Fun and Profit"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+
+### Personal: 
+
+During my free time, I draw (mostly sketches), and photoshoot. If you're interested, you can find my [previous drawings](arts) and [photographs](https://www.instagram.com/abovesummitwz/?hl=en).
+
 
 <!-- ### Research Experience: 
 

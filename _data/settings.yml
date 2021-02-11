@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Zheng Zhang
-  site_tagline: Penn State 2020er, Computing Statistics & Data Sciences
+  site_tagline: Penn State 2020er, Research Associate at Penn State IST. 
   favicon_image: /images/portrait/self_portrait.JPG
 
 header_settings:
@@ -9,12 +9,12 @@ header_settings:
 
 menu_settings:
   menu_items:
+    - title: 'About'
+      url: '/about'
     - title: 'Projects'
       url: '/'
     - title: 'Blog'
       url: '/blog/'
-    - title: 'About'
-      url: '/about'
     - title: 'Photographs'
       url: '/photographs'
     - title: 'Arts'
