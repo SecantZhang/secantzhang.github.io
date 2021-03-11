@@ -3,6 +3,7 @@ title: About
 subtitle: 
 description:
 featured_image: /images/portrait/website_logo_chinese_2.png
+permalink: / 
 ---
 
 <img src="/images/about/banner_zheng.png" alt="drawing" width="800"/>
@@ -34,11 +35,11 @@ My research focus on deep learning security & privacy, more specifically the bac
 
 ### Publications: 
 
-**2020 Preprint:** *"TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. 
+**2020 Preprint:** *"**TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
 
-**2020 Preprint:** *"Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+**2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
 
-**2020 Preprint:** *"Trojaning Language Models for Fun and Profit"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+**2021 Euro S&P:** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
 
 ### Personal: 
 
