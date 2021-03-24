@@ -1,9 +1,9 @@
 ---
-title: 'Sketches - Paper'
-subtitle: 'My previous sketches works'
+title: 'Made with Pen and Paper'
+subtitle: ''
 date: 2019-07-13
 description: 
-featured_image: '/images/arts/sketches/augur.jpg'
+featured_image: '/images/arts/sketches/IMG_2624-threshold.png'
 ---
 
 ## Casual
