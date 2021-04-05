@@ -16,13 +16,18 @@ You can find me via emails:
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
 
-Most recent update: Feb 11, 2021
+Most recent update: April 5, 2021
 
 ---
  
-I am a senior undergraduate student (graduated on Dec 19, 2020) studying computational statistics and data sciences at the Pennsylvania State University. I'm currently advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+I'm currently a research associate at Penn State IST under the supervision of [Dr. Ting Wang](https://www.alpslab.ai/). I completed my B.S. in computational statistics and data sciences at the Pennsylvania State University from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications. 
+
+### News: 
+
+* **[2021-04]** I will be joining [Northwestern Computer Science department](https://www.mccormick.northwestern.edu/computer-science/) as a Ph.D. student in Fall 2021! 
+* **[2021-03]** Our paper ["Trojanning Language Models for Fun and Profit"](https://arxiv.org/abs/2008.00312) got accepted at Euro S&P 2021! 
 
 ### Education: 
 
@@ -39,11 +44,11 @@ My research focus on deep learning security & privacy, more specifically the bac
 
 **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
 
-**2021 Euro S&P:** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
+**2021 Euro S&P:** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
 
 ### Personal: 
 
-During my free time, I draw (mostly sketches), and photoshoot. If you're interested, you can find my [previous drawings](arts) and [photographs](https://www.instagram.com/abovesummitwz/?hl=en).
+During my free time, I ride (motorcycle), draw (mostly sketches), and photoshoot. If you're interested, you can find my [previous drawings](arts) and [photographs](photographs).
 
 
 <!-- ### Research Experience: 
