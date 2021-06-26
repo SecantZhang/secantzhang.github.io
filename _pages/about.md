@@ -9,14 +9,13 @@ permalink: /
 <img src="/images/about/banner_zheng.png" alt="drawing" width="800"/>
 <!-- ![](images/about/banner_zheng.png) -->
 
-You can find me via emails: 
-* zxz147@psu.edu
-* zhengzhangedu@gmail.com (preferred)
+<!-- ![](images/about/nu-email.png){: .align-left height="40%" width="40%"} -->
+<!-- * zhengzhangedu@gmail.com (preferred) -->
 
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
 
-Most recent update: April 5, 2021
+Most recent update: Jun 25, 2021
 
 ---
  
@@ -31,8 +30,18 @@ My research focus on deep learning security & privacy, more specifically the bac
 
 ### Education: 
 
+#### Doctor of Philosophy (Expected 2026)
+***Northwestern University***, Evanston, IL
+* **Computer Science** - Security and Privacy
+
 #### Bachelor of Science (2016 - 2020)
-***The Pennsylvania State University***, University Park, PA
+<!-- <img src="images/about/psu-logo-pennstate.png" class="align-left" width="200"/>  -->
+
+<!-- ![](images/about/psu-logo-pennstate.png){: .align-left; height="25%" width="25%"} -->
+
+***The Pennsylvania State University***, University Park, PA 
+
+<!-- ![](images/about/psu-logo-pennstate.png){: .align-left; height="25%" width="25%"} -->
 
 * **Statistics** - Computing Option
 * **Data Sciences** - Statistical Modeling Option
@@ -40,7 +49,7 @@ My research focus on deep learning security & privacy, more specifically the bac
 
 ### Publications: 
 
-**2020 Preprint:** *"**TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
+**2020 Preprint:** *"**TrojanZoo: Towards Unified, Holistic, and Practical Evaluation of Neural Backdoors**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
 
 **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
 

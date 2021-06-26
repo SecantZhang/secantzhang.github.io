@@ -59,6 +59,7 @@ social_settings:
   spotify_url: ''
   bandcamp_url: ''
   linkedin_url: 'https://www.linkedin.com/in/zheng-zhang-5bbb46139/'
+  # google-scholar_url: 'https://scholar.google.com/citations?user=oSfFnawAAAAJ&hl=en&authuser=1'
 
 color_settings:
   background_color: '#ffffff'
