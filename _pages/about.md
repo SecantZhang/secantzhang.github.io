@@ -13,13 +13,13 @@ permalink: /
 <!-- * zhengzhangedu@gmail.com (preferred) -->
 
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
-[Curriculum Vitae](documents/zheng_zhang_cv.pdf) Right Click to Open in New Tab or Save. 
+[Google Scholar](https://scholar.google.com/citations?user=oSfFnawAAAAJ&hl=en&authuser=1),  [CV](documents/zheng_zhang_cv.pdf) (Right Click to Open in New Tab or Save).
 
-Most recent update: Jun 25, 2021
+Most recent update: Aug 11, 2021
 
 ---
- 
-I'm currently a research associate at Penn State IST under the supervision of [Dr. Ting Wang](https://www.alpslab.ai/). I completed my B.S. in computational statistics and data sciences at the Pennsylvania State University from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+
+I'm an incoming computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) under the supervision of Dr. Jennie Rogers. I completed my B.S. in computational statistics and data sciences at the Pennsylvania State University from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications. 
 
@@ -30,7 +30,7 @@ My research focus on deep learning security & privacy, more specifically the bac
 
 ### Education: 
 
-#### Doctor of Philosophy (Expected 2026)
+#### Doctor of Philosophy (2021 - Present)
 ***Northwestern University***, Evanston, IL
 * **Computer Science** - Security and Privacy
 
