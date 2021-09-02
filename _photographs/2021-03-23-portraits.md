@@ -7,6 +7,10 @@ featured_image: '/images/photographs/portfolio/portraits/DSCF4960-cover.jpg'
 ---
 
 <div class="gallery" data-columns="3">
+    <img src="/images/photographs/portfolio/portraits/DSCF7112.jpg">
+    <img src="/images/photographs/portfolio/portraits/DSCF7124.jpg">
+    <img src="/images/photographs/portfolio/portraits/DSCF7153.jpg">
+    <img src="/images/photographs/portfolio/portraits/DSCF7212-2-Edit.jpg">
     <img src="/images/photographs/portfolio/portraits/DSCF4960.jpg">
     <img src="/images/photographs/portfolio/portraits/DSCF5035.jpg">
     <img src="/images/photographs/portfolio/portraits/DSCF5046-Edit.jpg">

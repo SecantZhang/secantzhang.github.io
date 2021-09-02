@@ -45,3 +45,13 @@ featured_image: '/images/photographs/portfolio/landscapes/R0001273 2.jpg'
 <div class="gallery" data-columns="2">
     <img src="/images/photographs/portfolio/landscapes/R0001315.jpg">
 </div>
+
+### Lake
+
+🌊
+{: style="color:gray; font-size: 200%; text-align: center;"}
+
+<div class="gallery" data-columns="2">
+    <img src="/images/photographs/portfolio/landscapes/R0001887.jpg">
+    <img src="/images/photographs/portfolio/landscapes/R0001870.jpg">
+</div>

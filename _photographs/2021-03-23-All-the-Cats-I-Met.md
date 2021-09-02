@@ -7,6 +7,9 @@ featured_image: '/images/photographs/portfolio/all the cats I met/DSF8675.jpg'
 ---
 
 <div class="gallery" data-columns="2">
+    <img src="/images/photographs/portfolio/all the cats I met/R0002114.jpg">
+    <img src="/images/photographs/portfolio/all the cats I met/DSCF6963.jpg">
+    <img src="/images/photographs/portfolio/all the cats I met/DSCF6535.jpg">
     <img src="/images/photographs/portfolio/all the cats I met/DSCF4765.jpg">
     <img src="/images/photographs/portfolio/all the cats I met/DSF7831.jpg">
     <img src="/images/photographs/portfolio/all the cats I met/DSF7840.jpg">
