@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Zheng Zhang
-  site_tagline: Penn State 2020er, Research Associate at Penn State IST. 
+  site_tagline: Computer Science PhD Student at Northwestern University
   favicon_image: /images/portrait/self_portrait.JPG
 
 header_settings:
@@ -34,7 +34,7 @@ contact_settings:
 
 social_settings:
   facebook_url: ''
-  twitter_url: ''
+  twitter_url: 'https://twitter.com/abovesummitwz'
   instagram_url: 'https://www.instagram.com/abovesummitwz/'
   snapchat_url: ''
   youtube_url: ''
