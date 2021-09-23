@@ -19,10 +19,10 @@ Most recent update: Aug 11, 2021
 
 ---
 
-I'm an incoming computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) under the supervision of [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+I'm a first year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 <!-- My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications.  -->
-My research focus on Differential Privacy and its application in Database systems. 
+My research focus on Differential Privacy and its application in database systems. 
 
 ### News: 
 

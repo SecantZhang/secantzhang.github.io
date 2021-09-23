@@ -1,7 +1,7 @@
 basic_settings:
   site_title: Zheng Zhang
   site_tagline: Computer Science PhD Student at Northwestern University
-  favicon_image: /images/portrait/self_portrait.JPG
+  favicon_image: 
 
 header_settings:
   logo_image: 
