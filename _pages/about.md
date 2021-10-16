@@ -15,14 +15,14 @@ permalink: /
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
 [Google Scholar](https://scholar.google.com/citations?user=oSfFnawAAAAJ&hl=en&authuser=1),  [CV](documents/zheng_zhang_cv.pdf) (Right Click to Open in New Tab or Save).
 
-Most recent update: Aug 11, 2021
+Most recent update: Oct 15, 2021
 
 ---
 
 I'm a first year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 <!-- My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications.  -->
-My research focus on Differential Privacy and its application in database systems. 
+My research focus on security, privacy and its application in database systems such as differential privacy.
 
 ### News: 
 
