@@ -23,7 +23,7 @@ permalink: /
 I have a broad interest in the area of system security and privacy. More concretely, I’ve been working on improving the security and privacy guarantees of database management systems by applying differential privacy mechanisms and cryptography protocols. I’m also interested in adversarial and backdoor attacks of deep learning models/systems.
 
 ### News: 
-
+* **[2022-01]** Our paper ["TrojanZoo"](https://arxiv.org/abs/2012.09302) got accepted at Euro S&P 2022! 
 * **[2021-04]** I will be joining [Northwestern Computer Science department](https://www.mccormick.northwestern.edu/computer-science/) as a Ph.D. student in Fall 2021! 
 * **[2021-03]** Our paper ["Trojanning Language Models for Fun and Profit"](https://arxiv.org/abs/2008.00312) got accepted at Euro S&P 2021! 
 
@@ -48,11 +48,11 @@ I have a broad interest in the area of system security and privacy. More concret
 
 ### Publications: 
 
-**2020 Preprint:** *"**TrojanZoo: Towards Unified, Holistic, and Practical Evaluation of Neural Backdoors**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang, under peer review. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
+**IEEE EuroS&P 22':** *"**TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
 
-**2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review. 
+<!-- **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review.  -->
 
-**2021 Euro S&P:** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
+**IEEE EuroS&P 21':** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
 
 ### Personal: 
 
@@ -60,7 +60,7 @@ During my free time, I ride (motorcycle), draw (mostly sketches), and photoshoot
 
 ---
 
-Most recent update: Nov 23, 2021
+Most recent update: Feb 9, 2022
 
 <!-- ### Research Experience: 
 
