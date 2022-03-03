@@ -6,18 +6,18 @@ featured_image: /images/portrait/website_logo_chinese_2.png
 permalink: / 
 ---
 
-<img src="/images/about/banner_zheng.png" alt="drawing" width="800"/>
+<img src="/images/about/banner_zheng.png" alt="drawing" width="600"/>
 <!-- ![](images/about/banner_zheng.png) -->
 
 <!-- ![](images/about/nu-email.png){: .align-left height="40%" width="40%"} -->
 <!-- * zhengzhangedu@gmail.com (preferred) -->
 
 <!-- <a href="documents/zheng_zhang_cv.pdf" download class="button">Curriculum Vitae</a> &nbsp; Most recent update: Oct 29, 2019 -->
-[Google Scholar](https://scholar.google.com/citations?user=oSfFnawAAAAJ&hl=en&authuser=1),  [CV](documents/zheng_zhang_cv.pdf) (Right Click to Open in New Tab or Save).
+[Google Scholar](https://scholar.google.com/citations?user=oSfFnawAAAAJ&hl=en&authuser=1),  [CV](https://drive.google.com/file/d/15A5oAtvB4oYWf58fLDO2Nxlc7vRl5EnW/view?usp=sharing)
 
 ---
 
-👋Hi! I'm a first year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of machine/deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+👋 Hi! I'm a first year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 <!-- My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications.  -->
 I have a broad interest in the area of system security and privacy. More concretely, I’ve been working on improving the security and privacy guarantees of database management systems by applying differential privacy mechanisms and cryptography protocols. I’m also interested in adversarial and backdoor attacks of deep learning models/systems.
@@ -52,7 +52,7 @@ I have a broad interest in the area of system security and privacy. More concret
 
 <!-- **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review.  -->
 
-**IEEE EuroS&P 21':** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312)
+**IEEE EuroS&P 21':** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312) [talk](https://www.youtube.com/watch?v=JG30ZINS8ic)
 
 ### Personal: 
 
