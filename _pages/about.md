@@ -6,7 +6,7 @@ featured_image: /images/portrait/website_logo_chinese_2.png
 permalink: / 
 ---
 
-<img src="/images/about/banner_zheng.png" alt="drawing" width="600"/>
+<img src="/images/about/banner_zheng.png" alt="drawing" width="700"/>
 <!-- ![](images/about/banner_zheng.png) -->
 
 <!-- ![](images/about/nu-email.png){: .align-left height="40%" width="40%"} -->
