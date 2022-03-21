@@ -17,20 +17,23 @@ permalink: /
 
 ---
 
-👋 Hi! I'm a first year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://www.alpslab.ai/) for conducting researches in security and privacy of deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+👋 Hi! I'm a 1st year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://alps-lab.github.io/) for conducting researches in security and privacy of deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 <!-- My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications.  -->
 I have a broad interest in the area of system security and privacy. More concretely, I’ve been working on improving the security and privacy guarantees of database management systems by applying differential privacy mechanisms and cryptography protocols. I’m also interested in adversarial and backdoor attacks of deep learning models/systems.
 
-### News: 
-* **[2022-01]** Our paper ["TrojanZoo"](https://arxiv.org/abs/2012.09302) got accepted at Euro S&P 2022! 
-* **[2021-04]** I will be joining [Northwestern Computer Science department](https://www.mccormick.northwestern.edu/computer-science/) as a Ph.D. student in Fall 2021! 
-* **[2021-03]** Our paper ["Trojanning Language Models for Fun and Profit"](https://arxiv.org/abs/2008.00312) got accepted at Euro S&P 2021! 
+### News:
+
+* **[2022-01]** Our paper ["TrojanZoo"](https://arxiv.org/abs/2012.09302) got accepted at [Euro S&P 2022](https://www.ieee-security.org/TC/EuroSP2022/)!
+* **[2021-04]** I will be joining [Northwestern Computer Science department](https://www.mccormick.northwestern.edu/computer-science/) as a Ph.D. student in Fall 2021!
+* **[2021-03]** Our paper ["Trojanning Language Models for Fun and Profit"](https://arxiv.org/abs/2008.00312) got accepted at [Euro S&P 2021](https://www.ieee-security.org/TC/EuroSP2021/)!
 
 ### Education: 
 
 #### Doctor of Philosophy (2021 - Present)
+
 ***Northwestern University***, Evanston, IL
+
 * **Computer Science** - Security and Privacy
 
 #### Bachelor of Science (2016 - 2020)
@@ -52,7 +55,7 @@ I have a broad interest in the area of system security and privacy. More concret
 
 <!-- **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review.  -->
 
-**IEEE EuroS&P 21':** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312) [talk](https://www.youtube.com/watch?v=JG30ZINS8ic)
+**IEEE EuroS&P 21':** *"**Trojaning Language Models for Fun and Profit**"*. Xinyang Zhang, <ins>Zheng Zhang</ins>, Shouling Ji, and Ting Wang. [Paper](https://arxiv.org/abs/2008.00312) [Talk](https://www.youtube.com/watch?v=JG30ZINS8ic) [Slide](https://www.ieee-security.org/TC/EuroSP2021/slides/Xinyang%20Zhang%20-%20Xinyang%20Zhang-Trojaning%20Language%20Models%20for%20Fun%20and%20Pro%3Ft.pdf)
 
 ### Personal: 
 
