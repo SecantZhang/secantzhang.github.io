@@ -51,7 +51,7 @@ I have a broad interest in the area of system security and privacy. More concret
 
 ### Publications: 
 
-**IEEE EuroS&P 22':** *"**TROJANZOO: Everything you ever wanted to know about neural backdoors (but were afraid to ask)**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng and Ting Wang. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
+**IEEE EuroS&P 22':** *"**TrojanZoo: Towards Unified, Holistic, and Practical Evaluation of Neural Backdoors**"*. Ren Pang, <ins>Zheng Zhang</ins>, Xiangshan Gao, Zhaohan Xi, Shouling Ji, Peng Cheng, Xiaopu Luo and Ting Wang. [Paper](https://arxiv.org/abs/2012.09302) [GitHub](https://github.com/ain-soph/trojanzoo)
 
 <!-- **2020 Preprint:** *"**Composite Adversarial Training for Multiple Adversarial Perturbations and Beyond**"*. Xinyang Zhang, <ins>Zheng Zhang</ins> and Ting Wang, under peer review.  -->
 
