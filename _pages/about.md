@@ -17,10 +17,10 @@ permalink: /
 
 ---
 
-👋 Hi! I'm a 1st year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://alps-lab.github.io/) for conducting researches in security and privacy of deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
+👋 Hi! I'm a ~~1st~~ 2nd year computer science PhD student at [Northwestern University](https://www.mccormick.northwestern.edu/computer-science/) working with [Dr. Jennie Rogers](http://users.eecs.northwestern.edu/~jennie/). I completed my B.S. in computational statistics and data sciences at [the Pennsylvania State University](https://www.psu.edu/) from 2016 to 2020. During my undergraduate studies, I was advised by [Dr. Ting Wang](https://alps-lab.github.io/) for conducting researches in security and privacy of deep learning based systems. Previously, I worked as a bioinformatics programmer at [the Mahony Lab](http://mahonylab.org/) where I had pleasure working with a group of genius researchers from May till Dec, 2019.  
 
 <!-- My research focus on deep learning security & privacy, more specifically the backdoor attack and defense in deep learning based systems. My other interests are social computing, differential privacy as well as its applications.  -->
-I have a broad interest in the area of system security and privacy. More concretely, I’ve been working on improving the security and privacy guarantees of database management systems by applying differential privacy mechanisms and cryptography protocols. I’m also interested in adversarial and backdoor attacks of deep learning models/systems.
+I have a broad interest in the area of system security and privacy. More concretely, I’ve been working on improving the security and privacy guarantees of database management systems with cryptography protocols such as Zero-Knowledge Proofs. I’m also interested in adversarial and backdoor attacks of deep learning models/systems.
 
 ### News:
 
