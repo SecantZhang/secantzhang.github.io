@@ -5,15 +5,15 @@ basic_settings:
   favicon_image: 
 
 header_settings:
-  logo_image: 'images/logo_sign.png'
-  logo_width: 5000
+  # logo_image: 'images/logo_sign.png'
+  logo_width: 1200
 
 menu_settings:
   menu_items:
-    - title: '‎'
-      url: '/'
-    - title: '‎'
-      url: '/'
+    # - title: '‎'
+    #   url: '/'
+    # - title: '‎'
+    #   url: '/'
     - title: 'About'
       url: '/'
     - title: 'Projects'
@@ -80,7 +80,7 @@ color_settings:
   error_color: '#D64541'
 
 font_settings:
-  font_embed: '<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Josefin+Sans:wght@300&family=Lora&family=Roboto+Mono:wght@100;300&display=swap" rel="stylesheet">'
+  font_embed: '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">'
   title_font: 'Inconsolata, Inconsolata'
   body_font: 'Inconsolata, Inconsolata'
   # title_font: 'Josefin Sans, Josefin Sans'
