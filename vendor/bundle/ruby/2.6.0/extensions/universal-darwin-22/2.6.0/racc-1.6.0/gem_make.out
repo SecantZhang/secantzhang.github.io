@@ -1,0 +1,18 @@
+current directory: /Users/zzhang/Documents/Projects/personal/secantzhang.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20230925-54373-g0fq9l.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/zzhang/Documents/Projects/personal/secantzhang.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/zzhang/Documents/Projects/personal/secantzhang.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: directory not found for option '-L/AppleInternal/Library/BuildRoots/aaefcfd1-5c95-11ed-8734-2e32217d8374/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.Internal.sdk/usr/local/lib'
+
+current directory: /Users/zzhang/Documents/Projects/personal/secantzhang.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230925-54373-6owhh4/racc
