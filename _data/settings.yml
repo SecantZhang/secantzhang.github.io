@@ -1,19 +1,19 @@
 basic_settings:
   site_title: Zheng Zhang
   site_tagline: '‎'
-  # site_tagline: 'Computer Science Ph.D. student at Northwestern University'
+  # site_tagline: '\nCS Ph.D. student at Northwestern'
   favicon_image: 
 
 header_settings:
-  # logo_image: 'images/logo_sign.png'
-  logo_width: 1200
+  logo_image: 'images/logo_sign.png'
+  logo_width: 500
 
 menu_settings:
   menu_items:
-    # - title: '‎'
-    #   url: '/'
-    # - title: '‎'
-    #   url: '/'
+    - title: '‎'
+      url: '/'
+    - title: '‎'
+      url: '/'
     - title: 'About'
       url: '/'
     - title: 'Projects'
